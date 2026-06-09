@@ -5,74 +5,296 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KBLI 2025 — Pencarian Klasifikasi Baku Lapangan Usaha Indonesia</title>
+  <title>SiBaku KBLI 2025 — Pencarian Klasifikasi Baku Lapangan Usaha Indonesia</title>
   <meta name="description"
-    content="Cari kode KBLI 2025 dengan pencarian fuzzy cepat. Temukan klasifikasi usaha berdasarkan kode, nama, deskripsi, atau kata kunci." />
+    content="Sistem Pembakuan Statistik — Cari kode KBLI 2025 berdasarkan kata kunci, kode, atau kategori. Badan Pusat Statistik Indonesia." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- Animated background particles -->
-  <div class="bg-particles" aria-hidden="true">
-    <div class="particle p1"></div>
-    <div class="particle p2"></div>
-    <div class="particle p3"></div>
-    <div class="particle p4"></div>
-    <div class="particle p5"></div>
-  </div>
+  <!-- Top Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-brand">
+        <div class="brand-logo">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="url(#logoGrad)" />
+            <path d="M8 10h16M8 16h12M8 22h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                <stop stop-color="#1a56db" />
+                <stop offset="1" stop-color="#3b82f6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">SiBaku</span>
+          <span class="brand-sub">Sistem Pembakuan Statistik</span>
+        </div>
+      </div>
+      <div class="navbar-actions">
+        <button id="nav-history-btn" class="nav-btn" title="Riwayat Pencarian">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span class="nav-btn-label">Riwayat</span>
+        </button>
+        <button id="theme-toggle-btn" class="nav-btn" title="Toggle tema gelap/terang">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-  <header>
-    <div class="header-inner">
-      <h1>🔍 KBLI 2025</h1>
-      <p class="subtitle">Klasifikasi Baku Lapangan Usaha Indonesia</p>
+  <!-- Hero / Search Section -->
+  <header class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">KBLI 2025</div>
+      <h1>Klasifikasi Baku Lapangan Usaha Indonesia</h1>
+      <p class="hero-desc">Cari kode KBLI berdasarkan nama usaha, kode, deskripsi, atau kata kunci terkait.</p>
+
+      <div class="search-wrapper">
+        <div class="search-box" id="search-box">
+          <div class="search-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </div>
+          <input type="text" id="search-input" placeholder="Ketik kode, nama usaha, atau kata kunci..."
+            autocomplete="off" aria-label="Cari KBLI" />
+          <button id="clear-btn" class="clear-btn hidden" aria-label="Hapus pencarian">&times;</button>
+          <ul id="autocomplete-list" class="autocomplete-list hidden"></ul>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- Search & Filter -->
-    <section class="search-panel" id="search-panel">
-      <div class="search-box">
-        <div class="search-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
+  <!-- Main Content -->
+  <main class="main-content" id="main-content">
+    <div class="content-layout">
+
+      <!-- Sidebar: Category Navigation -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h2 class="sidebar-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+            Kategori
+          </h2>
+          <button id="sidebar-toggle-mobile" class="sidebar-toggle-mobile" aria-label="Toggle kategori">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
         </div>
-        <input type="text" id="search-input" placeholder="Cari kode, nama usaha, atau kata kunci..." autocomplete="off"
-          aria-label="Cari KBLI" />
-        <button id="clear-btn" class="clear-btn hidden" aria-label="Hapus pencarian">&times;</button>
-        <ul id="autocomplete-list" class="autocomplete-list hidden"></ul>
+        <ul class="category-list" id="category-list">
+          <li class="cat-item active" data-cat="">
+            <span class="cat-letter all-cat">∞</span>
+            <span class="cat-name">Semua Kategori</span>
+            <span class="cat-count" id="cat-count-all">0</span>
+          </li>
+          <!-- JS will populate the rest -->
+        </ul>
+      </aside>
+
+      <!-- Main Results Area -->
+      <div class="results-area">
+        <!-- Stats bar -->
+        <div class="stats-bar" id="stats-bar">
+          <div class="stats-left">
+            <span id="result-count">Memuat data…</span>
+          </div>
+          <div class="stats-right">
+            <button id="view-grid-btn" class="view-btn active" title="Tampilan grid">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+              </svg>
+            </button>
+            <button id="view-list-btn" class="view-btn" title="Tampilan list">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6" />
+                <line x1="8" y1="12" x2="21" y2="12" />
+                <line x1="8" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="3.01" y2="6" />
+                <line x1="3" y1="12" x2="3.01" y2="12" />
+                <line x1="3" y1="18" x2="3.01" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Results container -->
+        <section id="results" class="results-grid" aria-live="polite"></section>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="empty-state hidden">
+          <div class="empty-illustration">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <circle cx="35" cy="35" r="24" stroke="currentColor" stroke-width="3" opacity="0.3" />
+              <line x1="52" y1="52" x2="68" y2="68" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                opacity="0.3" />
+              <path d="M28 32h14M28 38h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                opacity="0.2" />
+            </svg>
+          </div>
+          <p class="empty-title">Tidak ditemukan</p>
+          <p class="empty-desc">Coba gunakan kata kunci lain atau ubah filter kategori.</p>
+        </div>
       </div>
-      <div class="filter-box">
-        <select id="category-filter" aria-label="Filter kategori">
-          <option value="" selected>Semua Kategori (A–V)</option>
-        </select>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <div class="stats-bar" id="stats-bar">
-      <span id="result-count">Memuat data…</span>
-    </div>
-
-    <!-- Results -->
-    <section id="results" class="results-grid" aria-live="polite"></section>
-
-    <!-- Empty state -->
-    <div id="empty-state" class="empty-state hidden">
-      <div class="empty-icon">🔎</div>
-      <p class="empty-title">Tidak ditemukan</p>
-      <p class="empty-desc">Coba gunakan kata kunci lain atau ubah filter kategori.</p>
     </div>
   </main>
 
-  <footer>
-    <p>KBLI 2025 Search &bull; Data placeholder &bull; <span id="total-entries">0</span> entri</p>
+  <!-- Details Modal -->
+  <div id="details-modal" class="modal-overlay hidden" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn" aria-label="Tutup detail">&times;</button>
+
+      <div class="modal-header">
+        <div class="modal-badge-row">
+          <span id="modal-kode" class="modal-kode"></span>
+          <span id="modal-kategori-badge" class="modal-kategori-badge"></span>
+        </div>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <p id="modal-kategori-name" class="modal-kategori-name"></p>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            Deskripsi
+          </h3>
+          <p id="modal-desc" class="modal-desc"></p>
+        </div>
+
+        <div id="modal-mencakup-section" class="modal-section">
+          <h3>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            Mencakup
+          </h3>
+          <ul id="modal-mencakup-list" class="modal-list modal-list-inc"></ul>
+        </div>
+
+        <div id="modal-tidak-mencakup-section" class="modal-section">
+          <h3>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            Tidak Mencakup
+          </h3>
+          <ul id="modal-tidak-mencakup-list" class="modal-list modal-list-exc"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="9" x2="20" y2="9" />
+              <line x1="4" y1="15" x2="20" y2="15" />
+              <line x1="10" y1="3" x2="8" y2="21" />
+              <line x1="16" y1="3" x2="14" y2="21" />
+            </svg>
+            Kata Kunci
+          </h3>
+          <div id="modal-keywords" class="modal-keywords"></div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="modal-copy-btn" class="modal-action-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+          </svg>
+          Salin Kode
+        </button>
+        <button id="modal-share-btn" class="modal-action-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+          </svg>
+          Bagikan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Panel -->
+  <div id="history-panel" class="history-panel hidden">
+    <div class="history-content">
+      <div class="history-header">
+        <h3>Riwayat Pencarian</h3>
+        <button id="history-close-btn" class="history-close" aria-label="Tutup riwayat">&times;</button>
+      </div>
+      <ul id="history-list" class="history-list">
+        <li class="history-empty">Belum ada riwayat pencarian.</li>
+      </ul>
+      <button id="history-clear-btn" class="history-clear-btn hidden">Hapus Semua Riwayat</button>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast hidden" role="alert">
+    <span id="toast-msg"></span>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>&copy; 2025 SiBaku KBLI &bull; Berdasarkan data Badan Pusat Statistik &bull; <span
+          id="total-entries">0</span> entri</p>
+    </div>
   </footer>
 
   <!-- Fuse.js CDN -->
