@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "kode": "01111",
+    "judul": "Pertanian Padi",
+    "kategori": "A",
+    "deskripsi": "Mencakup usaha pertanian mulai dari penyiapan lahan, penanaman, pemeliharaan, dan juga pemanenan dan pasca panen padi.",
+    "keyword": ["padi", "beras", "sawah", "pertanian", "tanam"]
+  },
+  {
+    "id": 2,
+    "kode": "03111",
+    "judul": "Penangkapan Ikan di Laut",
+    "kategori": "A",
+    "deskripsi": "Mencakup usaha penangkapan ikan di perairan laut dengan menggunakan berbagai jenis alat tangkap.",
+    "keyword": ["ikan", "laut", "nelayan", "perikanan", "tangkap"]
+  },
+  {
+    "id": 3,
+    "kode": "05100",
+    "judul": "Pertambangan Batu Bara",
+    "kategori": "B",
+    "deskripsi": "Mencakup usaha pertambangan batu bara termasuk batu bara muda dan batu bara tua.",
+    "keyword": ["batu bara", "tambang", "energi", "mineral"]
+  },
+  {
+    "id": 4,
+    "kode": "10710",
+    "judul": "Industri Roti dan Kue",
+    "kategori": "C",
+    "deskripsi": "Mencakup usaha pembuatan roti, kue basah dan kue kering, serta makanan sejenis.",
+    "keyword": ["roti", "kue", "bakery", "makanan", "pastry"]
+  },
+  {
+    "id": 5,
+    "kode": "10611",
+    "judul": "Industri Penggilingan Beras",
+    "kategori": "C",
+    "deskripsi": "Mencakup usaha penggilingan padi dan penyosohan beras termasuk huller dan polisher.",
+    "keyword": ["beras", "giling", "padi", "pengolahan"]
+  },
+  {
+    "id": 6,
+    "kode": "35111",
+    "judul": "Pembangkitan Tenaga Listrik",
+    "kategori": "D",
+    "deskripsi": "Mencakup usaha pembangkitan tenaga listrik dari berbagai sumber energi termasuk PLTA, PLTU, dan PLTS.",
+    "keyword": ["listrik", "pembangkit", "PLN", "energi", "PLTS"]
+  },
+  {
+    "id": 7,
+    "kode": "36001",
+    "judul": "Penampungan dan Penyaluran Air Minum",
+    "kategori": "E",
+    "deskripsi": "Mencakup usaha penampungan, penjernihan, dan penyaluran air minum melalui jaringan saluran pipa.",
+    "keyword": ["air", "PDAM", "air minum", "penjernihan", "pipa"]
+  },
+  {
+    "id": 8,
+    "kode": "41011",
+    "judul": "Konstruksi Gedung Tempat Tinggal",
+    "kategori": "F",
+    "deskripsi": "Mencakup usaha pembangunan gedung tempat tinggal seperti rumah, apartemen, dan kondominium.",
+    "keyword": ["konstruksi", "bangunan", "rumah", "apartemen", "properti"]
+  },
+  {
+    "id": 9,
+    "kode": "47111",
+    "judul": "Perdagangan Eceran Minimarket",
+    "kategori": "G",
+    "deskripsi": "Mencakup usaha perdagangan eceran berbagai jenis barang kebutuhan yang utamanya makanan, minuman atau tembakau di minimarket.",
+    "keyword": ["minimarket", "toko", "retail", "belanja", "eceran"]
+  },
+  {
+    "id": 10,
+    "kode": "49111",
+    "judul": "Angkutan Bus Antarkota Antarprovinsi",
+    "kategori": "H",
+    "deskripsi": "Mencakup usaha angkutan penumpang umum dengan bus yang beroperasi antarkota antarprovinsi.",
+    "keyword": ["bus", "transportasi", "AKAP", "penumpang", "angkutan"]
+  },
+  {
+    "id": 11,
+    "kode": "56303",
+    "judul": "Aktivitas Kedai Minuman",
+    "kategori": "I",
+    "deskripsi": "Mencakup usaha penyediaan minuman untuk konsumsi langsung seperti kedai kopi, bar jus, dan kedai teh.",
+    "keyword": ["kopi", "cafe", "kedai kopi", "minuman", "bar"]
+  },
+  {
+    "id": 12,
+    "kode": "62011",
+    "judul": "Aktivitas Pemrograman Komputer",
+    "kategori": "J",
+    "deskripsi": "Mencakup usaha pembuatan, modifikasi, pengujian, dan dukungan perangkat lunak/software komputer.",
+    "keyword": ["programming", "software", "developer", "IT", "komputer", "coding"]
+  },
+  {
+    "id": 13,
+    "kode": "64191",
+    "judul": "Aktivitas Bank Umum Konvensional",
+    "kategori": "K",
+    "deskripsi": "Mencakup usaha bank umum konvensional yang melakukan kegiatan perbankan secara umum.",
+    "keyword": ["bank", "keuangan", "tabungan", "kredit", "perbankan"]
+  },
+  {
+    "id": 14,
+    "kode": "68111",
+    "judul": "Real Estat Perumahan",
+    "kategori": "L",
+    "deskripsi": "Mencakup usaha pembelian, penjualan, dan penyewaan real estat yang dimiliki sendiri berupa perumahan.",
+    "keyword": ["real estat", "perumahan", "properti", "rumah", "jual beli"]
+  },
+  {
+    "id": 15,
+    "kode": "69101",
+    "judul": "Aktivitas Hukum dan Notaris",
+    "kategori": "M",
+    "deskripsi": "Mencakup usaha jasa hukum dan notaris termasuk konsultasi hukum, pembuatan akta, dan pengesahan dokumen.",
+    "keyword": ["notaris", "hukum", "advokat", "pengacara", "akta"]
+  },
+  {
+    "id": 16,
+    "kode": "77101",
+    "judul": "Aktivitas Penyewaan Kendaraan Bermotor",
+    "kategori": "N",
+    "deskripsi": "Mencakup usaha penyewaan segala jenis kendaraan bermotor tanpa pengemudi.",
+    "keyword": ["rental", "sewa mobil", "kendaraan", "penyewaan"]
+  },
+  {
+    "id": 17,
+    "kode": "84111",
+    "judul": "Administrasi Pemerintahan Umum",
+    "kategori": "O",
+    "deskripsi": "Mencakup kegiatan pemerintahan yang bersifat umum seperti legislatif, eksekutif, dan peradilan.",
+    "keyword": ["pemerintah", "administrasi", "birokrasi", "negara"]
+  },
+  {
+    "id": 18,
+    "kode": "85310",
+    "judul": "Pendidikan Menengah Umum",
+    "kategori": "P",
+    "deskripsi": "Mencakup usaha penyelenggaraan pendidikan menengah umum (SMA) dan pendidikan menengah kejuruan (SMK).",
+    "keyword": ["sekolah", "SMA", "SMK", "pendidikan", "guru"]
+  },
+  {
+    "id": 19,
+    "kode": "86101",
+    "judul": "Aktivitas Rumah Sakit",
+    "kategori": "Q",
+    "deskripsi": "Mencakup kegiatan rumah sakit umum maupun khusus yang menyediakan pelayanan kesehatan rawat inap.",
+    "keyword": ["rumah sakit", "RS", "kesehatan", "dokter", "rawat inap"]
+  },
+  {
+    "id": 20,
+    "kode": "90001",
+    "judul": "Aktivitas Seni Pertunjukan",
+    "kategori": "R",
+    "deskripsi": "Mencakup usaha penyelenggaraan pertunjukan seni seperti teater, musik, tari, dan seni pertunjukan lainnya.",
+    "keyword": ["seni", "pertunjukan", "teater", "musik", "konser"]
+  }
+]

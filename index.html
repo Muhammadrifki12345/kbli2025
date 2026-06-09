@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KBLI 2025 — Pencarian Klasifikasi Baku Lapangan Usaha Indonesia</title>
+  <meta name="description"
+    content="Cari kode KBLI 2025 dengan pencarian fuzzy cepat. Temukan klasifikasi usaha berdasarkan kode, nama, deskripsi, atau kata kunci." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Animated background particles -->
+  <div class="bg-particles" aria-hidden="true">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <h1>🔍 KBLI 2025</h1>
+      <p class="subtitle">Klasifikasi Baku Lapangan Usaha Indonesia</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Search & Filter -->
+    <section class="search-panel" id="search-panel">
+      <div class="search-box">
+        <div class="search-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </div>
+        <input type="text" id="search-input" placeholder="Cari kode, nama usaha, atau kata kunci..." autocomplete="off"
+          aria-label="Cari KBLI" />
+        <button id="clear-btn" class="clear-btn hidden" aria-label="Hapus pencarian">&times;</button>
+        <ul id="autocomplete-list" class="autocomplete-list hidden"></ul>
+      </div>
+      <div class="filter-box">
+        <select id="category-filter" aria-label="Filter kategori">
+          <option value="" selected>Semua Kategori (A–V)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar" id="stats-bar">
+      <span id="result-count">Memuat data…</span>
+    </div>
+
+    <!-- Results -->
+    <section id="results" class="results-grid" aria-live="polite"></section>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="empty-state hidden">
+      <div class="empty-icon">🔎</div>
+      <p class="empty-title">Tidak ditemukan</p>
+      <p class="empty-desc">Coba gunakan kata kunci lain atau ubah filter kategori.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>KBLI 2025 Search &bull; Data placeholder &bull; <span id="total-entries">0</span> entri</p>
+  </footer>
+
+  <!-- Fuse.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
